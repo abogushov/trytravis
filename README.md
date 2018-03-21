@@ -33,6 +33,9 @@ someinternalhost_IP = 10.164.0.3
 
 ## Homework 5
 
+testapp_IP = 35.204.96.8
+testapp_port = 9292
+
 ### Create a VM with the app
 
 Run this from the root
@@ -57,7 +60,12 @@ You can force to rerun startup script:
 sudo google_metadata_script_runner --script-type startup
 ```
 
-### Location of the app
+### Add firewall rule
 
-testapp_IP = 35.204.96.8
-testapp_port = 9292
+```bash
+gcloud compute firewall-rules create default-puma-server\
+  --allow=tcp:9292 \
+  --source-ranges=0.0.0.0/0 \
+  --target-tags=puma-server
+```
+
