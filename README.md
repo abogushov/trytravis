@@ -33,7 +33,7 @@ someinternalhost_IP = 10.164.0.3
 
 ## Homework 5
 
-testapp_IP = 35.204.96.8
+testapp_IP = 35.204.47.235
 testapp_port = 9292
 
 ### Create a VM with the app
