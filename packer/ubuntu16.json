@@ -1,14 +1,25 @@
 {
+  "variables": {
+    "proj_id": null,
+    "source_image_family": null,
+    "machine_type": "f1-micro",
+    "disk_size": "10",
+    "network": "default"
+  },
   "builders": [
     {
       "type": "googlecompute",
-      "project_id": "infra-198207",
+      "project_id": "{{user `proj_id`}}",
       "image_name": "reddit-base-{{timestamp}}",
       "image_family": "reddit-base",
-      "source_image_family": "ubuntu-1604-lts",
+      "source_image_family":  "{{user `source_image_family`}}",
       "zone": "europe-west1-b",
       "ssh_username": "otus",
-      "machine_type": "f1-micro"
+      "machine_type": "{{user `machine_type`}}",
+      "image_description": "An base image for reddit app",
+      "disk_size": "{{user `disk_size`}}",
+      "network": "{{user `network`}}",
+      "tags": ["puma-server"]
     }
   ],
   "provisioners": [
