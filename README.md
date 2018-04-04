@@ -69,3 +69,6 @@ gcloud compute firewall-rules create default-puma-server\
   --target-tags=puma-server
 ```
 
+## Homework 7
+
+ssh keys added via web will be removed after `terraform apply`.
