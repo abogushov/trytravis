@@ -71,4 +71,17 @@ gcloud compute firewall-rules create default-puma-server\
 
 ## Homework 7
 
+### Problem with ssh keys
+
 ssh keys added via web will be removed after `terraform apply`.
+
+### Problem with deploying
+
+Adding an instances manually via copying cannot be scaled.
+
+To deploy app via terraform:
+
+```bash
+cd terraform
+terraform apply
+```

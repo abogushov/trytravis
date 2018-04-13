@@ -6,7 +6,7 @@ resource "google_compute_global_forwarding_rule" "default" {
 
 resource "google_compute_target_http_proxy" "default" {
   name        = "default-proxy"
-  description = "a description"
+  description = "description"
   url_map     = "${google_compute_url_map.default.self_link}"
 }
 
@@ -40,7 +40,7 @@ resource "google_compute_instance_group" "default" {
   name = "default-instance-group"
 
   instances = [
-    "${google_compute_instance.app.self_link}",
+    "${google_compute_instance.app.*.self_link}",
   ]
 
   named_port {
