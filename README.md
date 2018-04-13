@@ -71,6 +71,14 @@ gcloud compute firewall-rules create default-puma-server\
 
 ## Homework 7
 
+- Terraform installed.
+- Created config to deploy reddit-app to GCP.
+- Created file with variables used to parameterize deploy.
+- Specified ip's of instances created during deploy.
+- Add resource to add few ssh-keys into project metadata.
+- Created load balancer.
+- App instance parametrized throw count variable.
+
 ### Problem with ssh keys
 
 ssh keys added via web will be removed after `terraform apply`.
@@ -85,3 +93,4 @@ To deploy app via terraform:
 cd terraform
 terraform apply
 ```
+
