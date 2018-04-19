@@ -10,13 +10,13 @@
     {
       "type": "googlecompute",
       "project_id": "{{user `proj_id`}}",
-      "image_name": "reddit-base-{{timestamp}}",
-      "image_family": "reddit-base",
+      "image_name": "reddit-app-base-{{timestamp}}",
+      "image_family": "reddit-app-base",
       "source_image_family":  "{{user `source_image_family`}}",
       "zone": "europe-west1-b",
       "ssh_username": "appuser",
       "machine_type": "{{user `machine_type`}}",
-      "image_description": "An base image for reddit app",
+      "image_description": "An image for reddit app",
       "disk_size": "{{user `disk_size`}}",
       "network": "{{user `network`}}",
       "tags": ["puma-server"]
@@ -26,11 +26,6 @@
     {
       "type": "shell",
       "script": "scripts/install_ruby.sh",
-      "execute_command": "sudo {{.Path}}"
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_mongodb.sh",
       "execute_command": "sudo {{.Path}}"
     }
   ]
