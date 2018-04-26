@@ -19,7 +19,7 @@
       "image_description": "An image with DB for reddit app",
       "disk_size": "{{user `disk_size`}}",
       "network": "{{user `network`}}",
-      "tags": ["puma-server"]
+      "tags": ["mongodb"]
     }
   ],
   "provisioners": [
