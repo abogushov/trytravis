@@ -1,5 +1,5 @@
 resource "google_compute_instance" "db" {
-  name         = "reddit-db"
+  name         = "${var.env}-reddit-db"
   machine_type = "g1-small"
   zone         = "${var.zone}"
   tags         = ["reddit-db"]
@@ -12,7 +12,6 @@ resource "google_compute_instance" "db" {
 
   network_interface {
     network       = "default"
-    access_config = {}
   }
 
   metadata {

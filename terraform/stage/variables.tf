@@ -29,3 +29,13 @@ variable db_disk_image {
   description = "Disk image for reddit db"
   default     = "reddit-db-base"
 }
+
+variable vpc_ip {
+  description = "Allowed ip for app"
+  default     = "0.0.0.0/0"
+}
+
+variable env {
+  description = "Environment"
+  default     = "test"
+}

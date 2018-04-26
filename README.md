@@ -1,5 +1,51 @@
-# abogushov_infra
-abogushov Infra repository
+# Инфраструктурный репозиторий
+
+## Содержание
+
+* [Домашняя работа 8](#домашняя-работа-8)
+
+
+## Домашняя работа 8
+
+
+Выполнено:
+
+* Импорт правила файрволла.
+* Создан ресурс для внешнего ip-адреса.
+* Выполнено разбиение приложения на модули `app`, `db`, `vpc`.
+* Создано два окружение `stage` и `prod`.
+* С помощью модуля `storage-bucket` были созданы хранилища.
+* Для всех окружений был создан удаленный бэкэнд.
+* Была восставнолена конфигурация для автоматического деплоя приложения.
+* Был пересобран образ с БД, так чтобы она была доступна для внешних клиентов.
+
+
+Для иморта существующего правила файрволла:
+
+```bash
+terraform import google_compute_firewall.firewall_ssh default-allow-ssh
+```
+
+Сборка образа с приложением:
+
+```bash
+packer build -var-file=variables.json app.json
+```
+
+Сборка образа c БД для приложения:
+
+```bash
+packer build -var-file=variables.json db.json
+```
+
+Получил ошибку при попытке развернуть все окружения в одной зоне, поэтому нужно разворачивать окружения в разных зонах.
+
+```bash
+google_compute_address.app_ip: Error creating address: googleapi: Error 403: Quota 'STATIC_ADDRESSES' exceeded. Limit: 1.0 in region europe-west4., quotaExceeded
+```
+
+
+---
 
 
 ## Connect to someinternalhost
@@ -93,4 +139,3 @@ To deploy app via terraform:
 cd terraform
 terraform apply
 ```
-
