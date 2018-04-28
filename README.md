@@ -4,7 +4,40 @@
 
 - [Домашняя работа 8](#домашняя-работа-8)
 - [Домашняя работа 9](#домашняя-работа-9)
+- [Домашняя работа 10](#домашняя-работа-10)
 
+
+## Домашняя работа 10
+
+Выполнено:
+
+- Добавлен плейбук для развертывания приложения.
+- Добавлен шаблон для конфигурации mongo db.
+- Добавлен unit для запуска сервера `puma`.
+- Добавлен шаблон для конфигурации переменных окружения сервера `puma`.
+- Добавлен плейбук состоящий из нескольких сценариев.
+- Добавлен вариант развертывания состоящий из нескольких плейбуков.
+- Добавлен модуль `terraform_inventory.py` для получения адресов серверов после развертывания через `terraform`.
+
+
+Для проверки сценария нужно добавить флаг `--check` 
+
+
+Примеры запуска монолитного сценария:
+
+```bash
+ansible-playbook reddit_app_one_play.yml --limit db --tags db-tag
+ansible-playbook reddit_app_one_play.yml --limit app --tags app-tag
+ansible-playbook reddit_app_one_play.yml --limit app --tags deploy-tag
+```
+
+Примеры запуска множественного сценария сценария:
+
+```bash
+ansible-playbook reddit_app_multiple_plays.yml --tags db-tag
+ansible-playbook reddit_app_multiple_plays.yml --tags app-tag
+ansible-playbook reddit_app_multiple_plays.yml --tags deploy-tag
+```
 
 ## Домашняя работа 9
 
