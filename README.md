@@ -18,6 +18,7 @@
 - Добавлен плейбук состоящий из нескольких сценариев.
 - Добавлен вариант развертывания состоящий из нескольких плейбуков.
 - Добавлен модуль `terraform_inventory.py` для получения адресов серверов после развертывания через `terraform`.
+- Добавлены плейбуки для использования в `packer`.
 
 
 Для проверки сценария нужно добавить флаг `--check` 
@@ -37,6 +38,23 @@ ansible-playbook reddit_app_one_play.yml --limit app --tags deploy-tag
 ansible-playbook reddit_app_multiple_plays.yml --tags db-tag
 ansible-playbook reddit_app_multiple_plays.yml --tags app-tag
 ansible-playbook reddit_app_multiple_plays.yml --tags deploy-tag
+```
+
+Примеры запуска различных раздельных сценариев:
+
+```bash
+ansible-playbook app.yml
+ansible-playbook db.yml
+ansible-playbook deploy.yml
+ansible-playbook site.yml
+```
+
+Сборка образов с использование `ansible` поставщика. Сборка должна происходить из корня проекта:
+
+```bash
+packer build -var-file=packer/variables.json packer/app.json
+packer build -var-file=packer/variables.json packer/db.json
+
 ```
 
 ## Домашняя работа 9
