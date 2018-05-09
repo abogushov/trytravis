@@ -26,7 +26,7 @@ if args.list:
     print(json.dumps({
         'app': {
             'hosts': [app_external_ip],
-            'vars': {'db_internal_ip': db_internal_ip}
+            'vars': {'db_host': db_internal_ip}
         },
         'db': [db_external_ip],
     }))

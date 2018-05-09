@@ -3,7 +3,7 @@ app:
     appserver:
       ansible_host: 35.204.109.136
   vars:
-    db_internal_ip: 10.164.0.2
+    db_host: 10.164.0.2
 
 db:
   hosts:
