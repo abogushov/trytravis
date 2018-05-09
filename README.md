@@ -5,6 +5,23 @@
 - [Домашняя работа 8](#домашняя-работа-8)
 - [Домашняя работа 9](#домашняя-работа-9)
 - [Домашняя работа 10](#домашняя-работа-10)
+- [Домашняя работа 11](#домашняя-работа-11)
+
+## Домашняя работа 11
+
+Выполнено:
+
+- Созданы ansible-роли для `app` и `db` в соответсвие с `ansible galaxy` форматом.
+- Созданы окружения `stage` и `prod`.
+- Переработана структура `ansible` проекта.
+
+Команды для сборки образов:
+
+```bash
+packer build -var-file=packer/variables.json packer/app.json
+packer build -var-file=packer/variables.json packer/db.json
+```
+
 
 
 ## Домашняя работа 10
@@ -54,7 +71,6 @@ ansible-playbook site.yml
 ```bash
 packer build -var-file=packer/variables.json packer/app.json
 packer build -var-file=packer/variables.json packer/db.json
-
 ```
 
 ## Домашняя работа 9
