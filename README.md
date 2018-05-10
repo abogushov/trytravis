@@ -34,6 +34,13 @@ ansible-playbook playbooks/site.yml --check
 ansible-playbook -i environments/prod/inventory playbooks/site.yml --check
 ```
 
+Шифрование данных:
+
+```bash
+ansible-vault encrypt environments/prod/credentials.yml
+ansible-vault encrypt environments/stage/credentials.yml
+```
+
 ## Домашняя работа 10
 
 Выполнено:

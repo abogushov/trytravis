@@ -10,6 +10,7 @@ packer/variables.json
 
 # Ansible
 *.retry
+vault.key
 
 # Ansible community roles
 jdauphant.nginx
