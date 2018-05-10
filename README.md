@@ -22,7 +22,17 @@ packer build -var-file=packer/variables.json packer/app.json
 packer build -var-file=packer/variables.json packer/db.json
 ```
 
+Деплой приложения на stage окружение:
 
+```bash
+ansible-playbook playbooks/site.yml --check
+```
+
+Деплой приложения на prod окружение:
+
+```bash
+ansible-playbook -i environments/prod/inventory playbooks/site.yml --check
+```
 
 ## Домашняя работа 10
 
