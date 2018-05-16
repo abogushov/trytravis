@@ -1,5 +1,7 @@
 # Инфраструктурный репозиторий
 
+[![Build Status](https://travis-ci.org/Otus-DevOps-2018-02/abogushov_infra.svg?branch=master)](https://travis-ci.org/Otus-DevOps-2018-02/abogushov_infra)
+
 ## Содержание
 
 - [Домашняя работа 8](#домашняя-работа-8)
@@ -14,6 +16,9 @@
 - Созданы ansible-роли для `app` и `db` в соответсвие с `ansible galaxy` форматом.
 - Созданы окружения `stage` и `prod`.
 - Переработана структура `ansible` проекта.
+- Шифрование закрытых данных через `ansible-vault`.
+- Отладка тестирования проекта через `trytravis`.
+- Добавлена валидация `packer` образов, `terraform` конфигураций и `ansible` скриптов.
 
 Команды для сборки образов:
 
@@ -25,13 +30,13 @@ packer build -var-file=packer/variables.json packer/db.json
 Деплой приложения на stage окружение:
 
 ```bash
-ansible-playbook playbooks/site.yml --check
+ansible-playbook playbooks/site.yml
 ```
 
 Деплой приложения на prod окружение:
 
 ```bash
-ansible-playbook -i environments/prod/inventory playbooks/site.yml --check
+ansible-playbook -i environments/prod/inventory playbooks/site.yml 
 ```
 
 Шифрование данных:
